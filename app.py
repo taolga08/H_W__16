@@ -109,6 +109,8 @@ def user(uid: int):
         user.email = user_data['email']
         user.role = user_data['role']
         user.phone = user_data['phone']
+        db.session.add(user)
+        db.session.commit()
         return '', 204
 
 
@@ -191,7 +193,7 @@ def offer(oid: int):
         offer = Offer.query.get(oid)
         offer.order_id = offer_data['order_id']
         offer.order_id = offer_data['order_id']
-        db.session.add(order)
+        db.session.add(offer)
         db.session.commit()
         return '', 204
 
