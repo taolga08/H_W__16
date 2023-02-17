@@ -104,7 +104,7 @@ def user(uid: int):
         user_data = json.loads(request.data)
         user = User.query.get(uid)
         user.first_name = user_data['first_name']
-        user.last_name = user_data['ast_name']
+        user.last_name = user_data['last_name']
         user.age = user_data['age']
         user.email = user_data['email']
         user.role = user_data['role']
